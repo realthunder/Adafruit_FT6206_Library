@@ -19,7 +19,9 @@
 #include <Wire.h>
 #include <Adafruit_FT6206.h>
 
-#if defined(__SAM3X8E__)
+#ifdef FT6206_WIRE
+    #define Wire FT6206_WIRE
+#elif defined(__SAM3X8E__)
     #define Wire Wire1
 #endif
 
